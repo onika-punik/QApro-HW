@@ -1,16 +1,31 @@
 // ДЗ-1
-
-function drawTriangle(length) {
-  var line = "";
-  for (var a = 1; a <= length; a++) {
-    for (var b = 0; b < a; b++) {
-      line += "* ";
+//Цикл for:
+function drawTriangle(height, symbol) {
+  for (let i = 1; i <= height; i++) {
+    let row = '';
+    for (let j = 1; j <= i; j++) {
+      row += symbol;
     }
-    line += '\n'; 
+    console.log(row);
   }
-  return line;
 }
-console.log(drawTriangle(7));
+drawTriangle(7, '*');
+
+//Цикл do while:
+function drawTriangle(height, symbol) {
+  let row = 1;
+  do {
+    let line = '';
+    let count = 1;
+    do {
+      line += symbol;
+      count++;
+    } while (count <= row);
+    console.log(line);
+    row++;
+  } while (row <= height);
+}
+drawTriangle(9, '*');
 
 //ДЗ-2
 
